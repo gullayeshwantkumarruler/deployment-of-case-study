@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Diabetes readmission</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('fun1')}}"method="post">
+    	<input type="number" name="encounter_id" placeholder="encounter_id" required="required" />
+	<input type="number" name="patient_nbr" placeholder="patient_nbr" required="required" />
+	<input type="text" name="race" placeholder="race" required="required" />
+	<input type="text" name="gender" placeholder="gender" required="required" />
+	<input type="text" name="age" placeholder="age" required="required" />
+	<input type="text" name="weight" placeholder="weight" required="required" />
+	<input type="number" name="admission_type_id" placeholder="admission_type_id" required="required" />
+	<input type="number" name="discharge_disposition_id" placeholder="discharge_disposition_id" required="required" />
+	<input type="number" name="admission_source_id" placeholder="admission_source_id" required="required" />
+	<input type="number" name="time_in_hospital" placeholder="time_in_hospital" required="required" />
+	<input type="text" name="payer_code" placeholder="payer_code" required="required" />
+	<input type="text" name="medical_specialty" placeholder="medical_specialty" required="required" />
+	<input type="number" name="num_lab_procedures" placeholder="num_lab_procedures" required="required" />
+	<input type="number" name="num_procedures" placeholder="num_procedures" required="required" />
+	<input type="number" name="num_medications" placeholder="num_medications" required="required" />
+	<input type="number" name="number_outpatient" placeholder="number_outpatient" required="required" />
+	<input type="number" name="number_emergency" placeholder="number_emergency" required="required" />
+	<input type="number" name="number_inpatient" placeholder="number_inpatient" required="required" />
+	<input type="text" name="diag_1" placeholder="diag_1" required="required" />
+	<input type="text" name="diag_2" placeholder="diag_2" required="required" />
+	<input type="text" name="diag_3" placeholder="diag_3" required="required" />
+	<input type="number" name="number_diagnoses" placeholder="number_diagnoses" required="required" />
+	<input type="text" name="max_glu_serum" placeholder="max_glu_serum" required="required" />
+	<input type="text" name="A1Cresult" placeholder="A1Cresult" required="required" />
+	<input type="text" name="metformin" placeholder="metformin" required="required" />
+	<input type="text" name="repaglinide" placeholder="repaglinide" required="required" />
+	<input type="text" name="nateglinide" placeholder="nateglinide" required="required" />
+	<input type="text" name="chlorpropamide" placeholder="chlorpropamide" required="required" />
+	<input type="text" name="glimepiride" placeholder="glimepiride" required="required" />
+	<input type="text" name="acetohexamide" placeholder="acetohexamide" required="required" />
+	<input type="text" name="glipizide" placeholder="glipizide" required="required" />
+	<input type="text" name="glyburide" placeholder="glyburide" required="required" />
+	<input type="text" name="tolbutamide" placeholder="tolbutamide" required="required" />
+	<input type="text" name="pioglitazone" placeholder="pioglitazone" required="required" />
+	<input type="text" name="rosiglitazone" placeholder="rosiglitazone" required="required" />
+	<input type="text" name="acarbose" placeholder="acarbose" required="required" />
+	<input type="text" name="miglitol" placeholder="miglitol" required="required" />
+	<input type="text" name="troglitazone" placeholder="troglitazone" required="required" />
+	<input type="text" name="tolazamide" placeholder="tolazamide" required="required" />
+	<input type="text" name="examide" placeholder="examide" required="required" />
+	<input type="text" name="citoglipton" placeholder="citoglipton" required="required" />
+	<input type="text" name="insulin" placeholder="insulin" required="required" />
+	<input type="text" name="glyburide-metformin" placeholder="glyburide-metformin" required="required" />
+	<input type="text" name="glipizide-metformin" placeholder="glipizide-metformin" required="required" />
+	<input type="text" name="glimepiride-pioglitazone" placeholder="glimepiride-pioglitazone" required="required" />
+	<input type="text" name="metformin-rosiglitazone" placeholder="metformin-rosiglitazone" required="required" />
+	<input type="text" name="metformin-pioglitazone" placeholder="metformin-pioglitazone" required="required" />
+	<input type="text" name="change" placeholder="change" required="required" />
+	<input type="text" name="diabetesMed" placeholder="diabetesMed" required="required" />
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
